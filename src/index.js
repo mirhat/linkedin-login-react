@@ -43,7 +43,7 @@ class LinkedIn extends Component {
       .toString(36)
       .substring(7);
     localStorage.linkedInReactState = state;
-    localStorage.linkedInReactRedirectUri = !!this.props.redirectUri ? this.props.redirectUri : window.location.href;
+    localStorage.linkedInReactRedirectUri = this.props.redirectUri;
     window.location.href = getURL(clientId, state, scope); // build url out of clientid, scope and state
   };
 
