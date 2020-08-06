@@ -43,7 +43,7 @@ class LinkedIn extends Component {
       .toString(36)
       .substring(7);
     localStorage.linkedInReactState = state;
-    localStorage.linkedInReactRedirectUri = window.location.href;
+    localStorage.linkedInReactRedirectUri = !!this.props.redirectUri ? this.props.redirectUri : window.location.href;
     window.location.href = getURL(clientId, state, scope); // build url out of clientid, scope and state
   };
 
@@ -61,7 +61,8 @@ LinkedIn.propTypes = {
   callback: PropTypes.func.isRequired,
   className: PropTypes.string,
   text: PropTypes.node,
-  scope: PropTypes.arrayOf(PropTypes.string)
+  scope: PropTypes.arrayOf(PropTypes.string),
+  redirectUri: PropTypes.string
 };
 
 export default LinkedIn;
