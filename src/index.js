@@ -9,7 +9,7 @@ class LinkedIn extends Component {
 
   restart = () => {
     const urlParams = new URLSearchParams(window.location.search);
-    const redirectUri = localStorage.linkedInReactRedirectUri;
+    const redirectUri = this.props.redirectUri;
     const previousState = localStorage.linkedInReactState;
 
     localStorage.linkedInReactState = "";
